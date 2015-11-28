@@ -1,0 +1,54 @@
+== README
+
+This README would normally document whatever steps are necessary to get the
+application up and running.
+
+Things you may want to cover:
+
+* Ruby version
+
+* System dependencies
+
+* Configuration
+
+* Database creation
+
+* Database initialization
+
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...
+
+Instalaciones posteriores
+
+* rails g devise:install
+* rails g devise Usuario
+* rails g devise:views #para acceder a las vistas del devise
+#agregar dos campos para guardar la info de la api de facebook
+* rails g migration AddColumnUIDToUsuario provider:string uid:string
+* rails g scaffold Post titulo:string contenido:text 	extension:string usuario:references
+* rake test
+* rails g migration ChangeColunEmailInUsuarios #pa eliminar indice de la columna email
+* rails g scaffold Attachment nombre:string extension:string post:references
+* crear concern Picturable
+* rails g model Friendship usuario:references friend:references
+
+
+
+
+
+#COMENTARIOS
+*En config-initializer configuramos en devise omniauth para facebook
+
+*Para las validaciones de strong params se crea el controlador registrations_controller que hereda de su homologo en devise, ademas se configura routes para que los registros se dirigan a dicho controlador y no al original de devise
+
+*se cambió initilizer devise para configurar   config.authentication_keys = [ :username ] en lugar de :email
+
+*Un concern me permite compartir código para que sea reutilizado
+
+Please feel free to use a different markup language if you do not plan to run
+<tt>rake doc:app</tt>. 
