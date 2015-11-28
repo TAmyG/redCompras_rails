@@ -38,6 +38,7 @@ Instalaciones posteriores
 * rails g model Friendship usuario:references friend:references
 * rails g public_activity:migration
 * crear concern Trackable para public activities en models
+* rails g migration add_column_to_posts costo:decimal
 
 
 
