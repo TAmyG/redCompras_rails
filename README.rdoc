@@ -34,8 +34,10 @@ Instalaciones posteriores
 * rake test
 * rails g migration ChangeColunEmailInUsuarios #pa eliminar indice de la columna email
 * rails g scaffold Attachment nombre:string extension:string post:references
-* crear concern Picturable
+* crear concern Picturable en models
 * rails g model Friendship usuario:references friend:references
+* rails g public_activity:migration
+* crear concern Trackable para public activities en models
 
 
 
@@ -49,6 +51,10 @@ Instalaciones posteriores
 *se cambió initilizer devise para configurar   config.authentication_keys = [ :username ] en lugar de :email
 
 *Un concern me permite compartir código para que sea reutilizado
+
+*Creación de archivo app.js.coffee para enviar las peticiones, para crear la amistad
+
+*se creo una vista public_activity->post para el tracking de los post
 
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>. 

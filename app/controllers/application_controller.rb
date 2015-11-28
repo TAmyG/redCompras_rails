@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
 
   #método para configurar los strong params de devise
+  include PublicActivity::StoreController
   protect_from_forgery with: :exception
 
 end

@@ -11,12 +11,12 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%=f.label :archivo  %>
     <%=f.file_field :archivo  %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :post_id, 'Post' %>
     <%= f.collection_select :post_id, Post.all, :id, :titulo %>
   </div>

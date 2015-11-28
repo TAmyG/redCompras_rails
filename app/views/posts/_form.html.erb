@@ -10,6 +10,7 @@
       </ul>
     </div>
   <% end %>
+
   <div class="form-group">
     <%= f.label :titulo %>
     <%= f.text_field :titulo, class:"form-control" %>
@@ -25,7 +26,7 @@
     <%= f.text_area :contenido, class:"form-control" %>
   </div>
 
-  <div class="actions">
-    <%= f.submit ,"submit post", class:"btn btn-info" %>
+  <div class="text-center">
+    <%= f.submit "Sign up" , class: "btn btn-info" %>
   </div>
 <% end %>

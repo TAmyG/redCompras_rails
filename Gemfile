@@ -27,6 +27,8 @@ gem 'font-awesome-rails'
 gem 'omniauth'
 #middleware de facebook
 gem 'omniauth-facebook'
+#para notificaciones y manejo del feed
+gem 'public_activity'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
