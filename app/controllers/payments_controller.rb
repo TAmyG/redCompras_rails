@@ -19,6 +19,18 @@ class PaymentsController < ApplicationController
 		@payments = current_usuario.payments.where(estado: 1)
 	end
 
+	def express
+		costo = current_usuario.costo_compra_pendiente
+		response = EXPRESS_GATEWAY.setup_purchase(costo * 100,
+		    ip: request.remote_ip,
+		    return_url: "http://localhost:3000/transactions/checkout",
+		    cancel_return_url: "http://localhost:3000/carrito",
+		    name: "Compra a EasyDesign",
+		    amount: costo * 100
+  		)
+  		redirect_to EXPRESS_GATEWAY.redirect_url_for(response.token, review: false)
+	end
+
 	private
 	def post_params
 		params.require(:payment).permit(:post_id)

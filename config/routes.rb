@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  
+
+
+  get '/carrito', to: 'payments#carrito'
+  get 'payments/express'
+
   resources :attachments
   resources :payments
   resources :posts
@@ -13,7 +17,6 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
   resources :usuario
 
-  get '/carrito', to: 'payments#carrito'
   get 'welcome/index'
   post 'usuario/follow'
   # You can have the root of your site routed with "root"

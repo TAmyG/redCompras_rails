@@ -38,7 +38,7 @@ Rails.application.configure do
       :signature => 'AeylCpENHv47e-TY3wZQSNsabvEjAW6zQmybQ9HaOgPJ0cxUK8gifE8q'
 
     }
-     #ActiveMerchant::Billing::Base.mode = :test
+     ActiveMerchant::Billing::Base.mode = :test
     
     ::EXPRESS_GATEWAY = ActiveMerchant::Billing::PaypalExpressGateway.new(paypal_options)
   end

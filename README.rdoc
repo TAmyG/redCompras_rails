@@ -65,8 +65,3 @@ Please feel free to use a different markup language if you do not plan to run
 
 
 
- <div class="text-center" data-no-turbolink> 
-	 <%= link_to(payments_express_path,class: "btn btn-success btn-lg") do %> 
-		 <i class="fa fa-money"></i> Pagar
-		 <%end%>	
-		 </div> 
