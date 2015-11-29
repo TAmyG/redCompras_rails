@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   
   resources :attachments
+  resources :payments
   resources :posts
 
   #indico a rail el controlador por donde se aceptarán las peticiones omniauth_callbacks
@@ -12,7 +13,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
   resources :usuario
 
-  
+  get '/carrito', to: 'payments#carrito'
   get 'welcome/index'
   post 'usuario/follow'
   # You can have the root of your site routed with "root"

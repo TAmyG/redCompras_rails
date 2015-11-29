@@ -30,6 +30,19 @@ Rails.application.configure do
   # number of complex assets.
   config.assets.debug = true
 
+  #CONFIGURACION PAYPAL CON SANDBOX
+  config.after_initialize do
+    paypal_options = {
+      :login => 'tamy.vivas-facilitator_api1.gmail.com',
+      :password => '22H7D7L5XSYPG9NG',
+      :signature => 'AeylCpENHv47e-TY3wZQSNsabvEjAW6zQmybQ9HaOgPJ0cxUK8gifE8q'
+
+    }
+     #ActiveMerchant::Billing::Base.mode = :test
+    
+    ::EXPRESS_GATEWAY = ActiveMerchant::Billing::PaypalExpressGateway.new(paypal_options)
+  end
+
   # Asset digests allow you to set far-future HTTP expiration dates on all assets,
   # yet still be able to expire them through the digest params.
   config.assets.digest = true

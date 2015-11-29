@@ -39,7 +39,9 @@ Instalaciones posteriores
 * rails g public_activity:migration
 * crear concern Trackable para public activities en models
 * rails g migration add_column_to_posts costo:decimal
-
+* crear nueva config en config.enviroments.develpment para agregar las credenciales del facilitator account de paypal
+* rails g model Payment post:references usuario:references estado:integer
+* rails g controller payments
 
 
 
@@ -59,3 +61,12 @@ Instalaciones posteriores
 
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>. 
+
+
+
+
+ <div class="text-center" data-no-turbolink> 
+	 <%= link_to(payments_express_path,class: "btn btn-success btn-lg") do %> 
+		 <i class="fa fa-money"></i> Pagar
+		 <%end%>	
+		 </div> 

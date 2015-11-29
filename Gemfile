@@ -19,7 +19,6 @@ gem 'jquery-rails'
 
 # NEW ADD BOOTSTRAP
 gem 'bootstrap-sass', '~> 3.0.2.1'
-
 gem 'devise', '~> 3.4.0'#'~> 3.2.2'
 #ICONOS A MORIR
 gem 'font-awesome-rails'
@@ -29,6 +28,8 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 #para notificaciones y manejo del feed
 gem 'public_activity'
+#manejo de pagos con paypal
+gem 'activemerchant'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'

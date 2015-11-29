@@ -3,7 +3,9 @@ class Post < ActiveRecord::Base
   #modelos relacionado
   belongs_to :usuario, dependent: :destroy
   has_many :attachments
-  validates :titulo, presence: true, uniqueness: true
+  has_many :payments
+  validates :titulo, presence: true, uniqueness: true  
+
   before_save :valores_por_default
   include Picturable
   include PublicActivity::Model

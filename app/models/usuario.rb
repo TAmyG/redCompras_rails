@@ -10,7 +10,7 @@ class Usuario < ActiveRecord::Base
   has_many :follows, through: :friendships, source: :friend
   has_many :followers_friendships, class_name: "Friendship", foreign_key: "friend_id"
   has_many :followers, through: :followers_friendships, source: :usuario
-
+  has_many :payments
 
 #agregar amigos a mi mismo
   def follow!(amigo_id)
@@ -25,6 +25,11 @@ class Usuario < ActiveRecord::Base
   #sobre escribir validatable
   def email_required?
     false
+  end
+
+  def costo_compra_pendiente
+    payments.where(estado: 1).joins('INNER JOIN posts on posts.id == payments.post_id').sum('costo')
+
   end
 
   validates :username, presence: true, uniqueness: true, 
