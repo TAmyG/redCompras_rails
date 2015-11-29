@@ -15,4 +15,9 @@ class Post < ActiveRecord::Base
   	def valores_por_default
   		self.costo ||= 0
   	end
+
+    def usuarios_ha_pagado? usuario_id
+      self.payments.where(estado: 2).size > 0
+    end
+
 end

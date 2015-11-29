@@ -2,8 +2,9 @@ Rails.application.routes.draw do
 
 
   get '/carrito', to: 'payments#carrito'
+  get '/compras', to: 'payments#compras'
   get 'payments/express'
-
+  get '/transactions/checkout'
   resources :attachments
   resources :payments
   resources :posts

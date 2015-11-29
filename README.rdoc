@@ -42,6 +42,9 @@ Instalaciones posteriores
 * crear nueva config en config.enviroments.develpment para agregar las credenciales del facilitator account de paypal
 * rails g model Payment post:references usuario:references estado:integer
 * rails g controller payments
+* rails g model Transaction token:string payerid:string usuario:references total:decimal respuesta:string
+* rails g controller transactions
+* rails g migration add_column_ip_to_transactions ip_address:string
 
 
 

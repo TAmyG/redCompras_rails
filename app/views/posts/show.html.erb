@@ -3,8 +3,19 @@
 	<div>
 		<%= @post.contenido  %>
 	</div>
+	<div>
+		<%= @post.attachments.size%>
+	</div>
 	<% if usuario_signed_in? %>
-	<%= render "payments/form", payment: Payment.new, post: @post%>
+		<% if @post.usuarios_ha_pagado? current_usuario.id %>
+
+			<% @post.attachments.each do |atach|%>
+			<% link_to atach.nombre, atach %>
+			<% end %>
+		<% else %>
+
+			<%= render "payments/form", payment: Payment.new, post: @post%>
+		<% end %>
 	<% end %>
 </div>
 	<div class="text-right">

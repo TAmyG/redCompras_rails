@@ -28,6 +28,12 @@
     				<li>
     					<%= link_to "Editar Perfil", edit_usuario_registration_path(current_usuario) %>	
     				</li>
+                    <li>
+                        <%= link_to "Mi carrito", carrito_path %> 
+                    </li>
+                    <li>
+                        <%= link_to "Mis compras", compras_path %> 
+                    </li>
     				<li>
     					<%= link_to "Cerrar sesión", destroy_usuario_session_path, method: :delete%>
     				</li>                    

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151129033846) do
+ActiveRecord::Schema.define(version: 20151129144650) do
 
   create_table "activities", force: :cascade do |t|
     t.integer  "trackable_id"
@@ -72,6 +72,19 @@ ActiveRecord::Schema.define(version: 20151129033846) do
   end
 
   add_index "posts", ["usuario_id"], name: "index_posts_on_usuario_id"
+
+  create_table "transactions", force: :cascade do |t|
+    t.string   "token"
+    t.string   "payerid"
+    t.integer  "usuario_id"
+    t.decimal  "total",      precision: 10, scale: 3
+    t.string   "respuesta"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+    t.string   "ip_address"
+  end
+
+  add_index "transactions", ["usuario_id"], name: "index_transactions_on_usuario_id"
 
   create_table "usuarios", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

@@ -11,6 +11,7 @@ class Usuario < ActiveRecord::Base
   has_many :followers_friendships, class_name: "Friendship", foreign_key: "friend_id"
   has_many :followers, through: :followers_friendships, source: :usuario
   has_many :payments
+  has_many :transactions
 
 #agregar amigos a mi mismo
   def follow!(amigo_id)
