@@ -13,7 +13,7 @@ class Post < ActiveRecord::Base
   include PublicActivity::Model
   	tracked owner: Proc.new{ |controller, model| controller.current_usuario }
 
-#el || sirve para que rails asigne el valor si se crea el modelo sin dicho campo
+  #el || sirve para que rails asigne el valor si se crea el modelo sin dicho campo
   	def valores_por_default
   		self.costo ||= 0
   	end
@@ -30,6 +30,7 @@ class Post < ActiveRecord::Base
         obj: self,
         username: self.usuario.username.capitalize,
         user_id: self.usuario.id
+
       }
       $redis.publish 'rt-change', msg.to_json
     end
