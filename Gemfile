@@ -33,6 +33,8 @@ gem 'activemerchant'
 #PARTE DE REDIS Y NODEJS
 #permite conección a redis
 gem 'redis', ' ~> 3.0.6'
+#permite que usemos jQuery templates
+gem 'jquery-tmpl-rails', '~> 1.1.0'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
