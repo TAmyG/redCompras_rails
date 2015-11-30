@@ -1,6 +1,7 @@
 $ = jQuery
 
 $(document).on "ready page:load", ->
+	easyDesign.connect();
 	$("#follow_btn").on "click", ->
 		friend = $(this).data("friend")
 		boton = $(this)

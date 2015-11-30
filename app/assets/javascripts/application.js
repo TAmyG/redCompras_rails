@@ -11,6 +11,9 @@
 // about supported directives.
 //
 //= require jquery
+//= require socketio
+//= require realtime
+//= require jquery-tmpl
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap
