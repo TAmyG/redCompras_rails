@@ -30,6 +30,9 @@ gem 'omniauth-facebook'
 gem 'public_activity'
 #manejo de pagos con paypal
 gem 'activemerchant'
+#PARTE DE REDIS Y NODEJS
+#permite conección a redis
+gem 'redis', ' ~> 3.0.6'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
