@@ -7,6 +7,8 @@ class Post < ActiveRecord::Base
   validates :titulo, presence: true, uniqueness: true  
 
   before_save :valores_por_default
+  after_create {|post| post.message 'create'}
+
   include Picturable
   include PublicActivity::Model
   	tracked owner: Proc.new{ |controller, model| controller.current_usuario }
@@ -20,4 +22,15 @@ class Post < ActiveRecord::Base
       self.payments.where(estado: 2).size > 0
     end
 
+    def message action
+      msg = {
+        resource: 'posts',
+        action: action,
+        id: self.id,
+        obj: self,
+        username: self.usuario.username.capitalize,
+        user_id: self.usuario.id
+      }
+      $redis.publish 'rt-change', msg.to_json
+    end
 end
